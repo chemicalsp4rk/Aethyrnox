@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  background: linear-gradient(135deg, hotpink, orange);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.receipt-container {
+  background: white;
+  border: 2px dashed black;
+  padding: 2rem;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.header.glitch {
+  font-size: 1.5rem;
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.header.glitch::before,
+.header.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.header.glitch::before {
+  animation: glitchTop 1s infinite;
+  color: hotpink;
+}
+
+.header.glitch::after {
+  animation: glitchBottom 1s infinite;
+  color: cyan;
+}
+
+@keyframes glitchTop {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(-2px, 2px); }
+  60% { transform: translate(2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+  0% { transform: translate(0); }
+  20% { transform: translate(2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(-2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.btn {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: gray;
+}
