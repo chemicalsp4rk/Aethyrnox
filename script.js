@@ -12,7 +12,7 @@ window.onload = () => {
     window.history.pushState("", document.title, window.location.pathname);
     if (token) {
       localStorage.setItem("spotify_token", token);
-      window.location.href = "main.html";
+      window.location.href = "https://aethyrnox-backend.vercel.app/api/login"
     }
   }
 };
